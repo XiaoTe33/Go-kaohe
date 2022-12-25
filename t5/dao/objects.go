@@ -39,3 +39,12 @@ func SQLPutObject(oid string, num int) {
 		return
 	}
 }
+func SQLMoveObject(oid string, wid string) {
+	sqlStr := "update objects set o_wid=? where oid =?"
+
+	_, err := Db.Exec(sqlStr, wid, oid)
+	if err != nil {
+		fmt.Println("Exec err")
+		return
+	}
+}

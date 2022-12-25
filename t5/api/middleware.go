@@ -10,7 +10,7 @@ import (
 
 func Middleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if c.Request.URL.Path == "/Login" {
+		if c.Request.URL.Path == "/Login" || c.Request.URL.Path == "/Register" {
 			c.Next()
 			return
 		}

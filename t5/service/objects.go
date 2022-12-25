@@ -12,3 +12,6 @@ func PutObject(oid string, num int) {
 func TakeAwayObject(oid string, num int) {
 	dao.SQLPutObject(oid, num*(-1))
 }
+func MoveObject(oid string, wid string) {
+	dao.SQLMoveObject(oid, wid)
+}

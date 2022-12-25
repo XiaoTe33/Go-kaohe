@@ -64,7 +64,7 @@ func AddObject(c *gin.Context) {
 	wid := c.PostForm("wid")
 	service.AddObject(oid, wid)
 	c.JSON(http.StatusOK, gin.H{
-		"msg": "货物增加成功",
+		"msg": "货物上架成功",
 	})
 }
 
@@ -76,7 +76,7 @@ func PutObject(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"msg": "货物上架成功",
+		"msg": "货物增加成功",
 	})
 	service.PutObject(oid, num)
 }
@@ -88,11 +88,16 @@ func TakeAwayObject(c *gin.Context) {
 		return
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"msg": "货物上架成功",
+		"msg": "货物出库成功",
 	})
 	service.TakeAwayObject(oid, num)
 }
 
 func MoveObject(c *gin.Context) {
-
+	oid := c.PostForm("oid")
+	wid := c.PostForm("wid")
+	service.MoveObject(oid, wid)
+	c.JSON(http.StatusOK, gin.H{
+		"msg": "货物变更成功",
+	})
 }
