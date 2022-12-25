@@ -2,6 +2,6 @@ package service
 
 import "Go-kaohe/t5/dao"
 
-func ServiceIsValidUsername(username string) bool {
+func IsValidUsername(username string) bool {
 	return dao.SQLIsValidUsername(username)
 }

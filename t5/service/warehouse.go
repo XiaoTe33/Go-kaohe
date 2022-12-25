@@ -2,6 +2,6 @@ package service
 
 import "Go-kaohe/t5/dao"
 
-func ServiceAddWarehouse() {
+func AddWarehouse() {
 	dao.SQLAddWarehouse()
 }
